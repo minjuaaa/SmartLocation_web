@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="smartlocation.contracker.dao.GpsMapper">
+    <select id="getList" resultType="smartlocation.contracker.dto.gps">
+        SELECT *
+        FROM gps;
+    </select>
+
+    <select id="getlatitude01" resultType="smartlocation.contracker.dto.gps">
+        SELECT latitude
+        FROM gps
+        WHERE userID=1
+        ORDER BY timestamp DESC LIMIT 1;
+    </select>
+
+    <select id="getlongtitude01" resultType="smartlocation.contracker.dto.gps">
+        SELECT longtitude
+        FROM gps
+        WHERE userID=1
+        ORDER BY timestamp DESC LIMIT 1;
+    </select>
+
+    <select id="getlatitude02" resultType="smartlocation.contracker.dto.gps">
+        SELECT latitude
+        FROM gps
+        WHERE userID=2
+        ORDER BY timestamp DESC LIMIT 1;
+    </select>
+
+    <select id="getlongtitude02" resultType="smartlocation.contracker.dto.gps">
+        SELECT longtitude
+        FROM gps
+        WHERE userID=2
+        ORDER BY timestamp DESC LIMIT 1;
+    </select>
+</mapper>
